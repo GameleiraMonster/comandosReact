@@ -1,0 +1,110 @@
+-----------------INICIANDO O REACT-------------
+
+create-react-app "Nome da pasta do projeto" ou npx create-react-app "nome do projeto"
+
+npm install json-server react-icons react-router-dom uuid
+
+
+---------------ALGUMAS SINTAXES----------------
+
+PROPS
+
+function exemplo(props){
+
+	return(
+	<>
+	    <li>{props.marca}</li>
+	</>
+	)
+}
+
+export defaul exemplo
+
+
+Lá no App.js
+
+import exemplo from './"nome da pasta onde está o exemplo"/exemplo'
+
+-----------------FRAGMENTS------------------------
+
+Sintaxe bastante utilizada em casos onde eu quero somente uma lista, sem a necessidade de utilizar uma <div></div> 
+
+
+Ex:
+<> 
+    <li></li>
+</>
+
+
+-------------------PROPTYPES-----------------------
+
+Tem que ser feito a importação do pacote que já vem no proprio react
+
+import PropTypes from 'prop-types'
+
+Exemplo
+
+"nome da minha função".propTypes = {
+	"nome da propriedade": PropTypes."tipo da propriedade que pode ser string, number ...",
+}
+
+
+------------------DEFAULTPROP---------------------
+
+o defaultProp atribui um valor padrão para minha propriedade
+
+"nome da função".defaultProps = {
+	"nome da propriedade: "valor atribuido"
+}
+
+
+onClick, onChange e onSubmit
+
+----------EXEMPLO onClick---------------
+
+function Evento ({numero}){
+
+    function meuEvento(){
+        console.log(`Opa, fui ativado! ${numero}`)
+    }
+
+    return(
+        <div>
+            <p>Clique para disparar um evento:</p>
+            <button onClick={meuEvento}>Ativar!</button>
+        </div>
+    )
+}
+
+export default Evento
+--------- EXEMPLO onSubmit-------------
+
+function Form (){
+
+    function cadastrarUsuario(e){
+        e.preventDefault()
+        console.log("Cadastrou o usuário")
+    }
+
+    return(
+        <div>
+            <h1>Meu cadastro:</h1>
+            <form onSubmit={cadastrarUsuario}>
+                <div>
+                    <input type="text" placeholder="Digite o seu nome" />
+                </div>
+                <div>
+                    <input type="submit" value="Cadastrar" />
+                </div>
+            </form>
+        </div>
+    )
+}
+
+export default Form
+
+-------------------useState--------------
+
+import {useState} from 'react'
+
+
